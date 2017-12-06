@@ -3,95 +3,46 @@
     <link rel='stylesheet' href='~/lib/unitegallery/css/unite-gallery.css' type='text/css' />
     <link rel='stylesheet' href='~/lib/unitegallery/themes/default/ug-theme-default.css' type='text/css' />
     <script src="~/lib/unitegallery/themes/tiles/ug-theme-tiles.js"></script>
+
 }
-
-@section Scripts {
-    <script src="~/js/gallery.js"></script>
-}
-                <div id="gallery" style="display:none;">
-
-                    <img alt="Preview Image 1"
-                         src="~/images/thumbs/thumb1.jpg"
-                         data-image="/images/big/image1.jpg"
-                         data-description="Preview Image 1 Description">
-
-                    <img alt="Preview Image 2"
-                         src="~/images/thumbs/thumb2.jpg"
-                         data-image="/images/big/image2.jpg"
-                         data-description="Preview Image 2 Description">
-                    <img alt="Youtube Video"
-                         data-type="youtube"
-                         data-videoid="A3PDXmYoF5U"
-                         data-description="You can include youtube videos easily!">
-                    <img alt="Preview Image 3"
-                         src="~/images/thumbs/thumb3.jpg"
-                         data-image="/images/big/image3.jpg"
-                         data-description="Preview Image 3 Description">
-                    <img alt="Vimeo Video"
-                         data-type="vimeo"
-                         src="http://i.vimeocdn.com/video/447294219_200x150.jpg"
-                         data-image="http://i.vimeocdn.com/video/447294219_640.jpg"
-                         data-videoid="73234449"
-                         data-description="This gallery can also play vimeo videos!">
-                    <img alt="Preview Image 4"
-                         src="~/images/thumbs/thumb4.jpg"
-                         data-image="/images/big/image4.jpg"
-                         data-description="Preview Image 4 Description">
-                    <img alt="Html5 Video"
-                         src="~/images/thumbs/html5_video.png"
-                         data-type="html5video"
-                         data-image="http://video-js.zencoder.com/oceans-clip.png"
-                         data-videoogv="http://video-js.zencoder.com/oceans-clip.ogv"
-                         data-videowebm="http://video-js.zencoder.com/oceans-clip.webm"
-                         data-videomp4="http://video-js.zencoder.com/oceans-clip.mp4"
-                         data-description="This is html5 video demo played by mediaelement2 player">
-
-                    <img alt="Preview Image 5"
-                         src="~/images/thumbs/thumb1.jpg"
-                         data-image="/images/big/image1.jpg"
-                         data-description="Preview Image 5 Description">
-                    <img alt="Wistia Video"
-                         src="~/images/thumbs/wistia_video.jpg"
-                         data-type="wistia"
-                         data-image="~/images/big/wistia_video.jpg"
-                         data-videoid="9oedgxuciv"
-                         data-description="Hey, the gallery plays Wistia videos too!">
-
-                    <img alt="Preview Image 6"
-                         src="~/images/thumbs/thumb2.jpg"
-                         data-image="/images/big/image2.jpg"
-                         data-description="Preview Image 6 Description">
-
-                    <img alt="Sound Cloud Track"
-                         src="~/images/thumbs/sound_cloud.jpg"
-                         data-type="soundcloud"
-                         data-image="/images/thumbs/sound_cloud.jpg"
-                         data-trackid="8390970"
-                         data-description="This gallery can play a soundcloud track">
-
-                    <img alt="Preview Image 7"
-                         src="~/images/thumbs/thumb3.jpg"
-                         data-image="/images/big/image3.jpg"
-                         data-description="Preview Image 7 Description">
-
-                    <img alt="Preview Image 8"
-                         src="~/images/thumbs/thumb4.jpg"
-                         data-image="/images/big/image4.jpg"
-                         data-description="Preview Image 8 Description">
-
-                    <img alt="Preview Image 9"
-                         src="~/images/thumbs/thumb1.jpg"
-                         data-image="/images/big/image1.jpg"
-                         data-description="Preview Image 9 Description">
-
-                    <img alt="Preview Image 10"
-                         src="~/images/thumbs/thumb2.jpg"
-                         data-image="/images/big/image2.jpg"
-                         data-description="Preview Image 10 Description">
-
-                    <img alt="Preview Image 11"
-                         src="~/images/thumbs/thumb3.jpg"
-                         data-image="/images/big/image3.jpg"
-                         data-description="Preview Image 11 Description">
-
-                </div>
+<script>
+var processData = function (data) {
+    console.log(data);
+    $("#output").empty();
+    for (var i = 0; i < data.items.length; i++) {
+        var item = data.items[i];
+        var thumbnailURL = item.media.m;
+        var bigURL = thumbnailURL.replace("_m", "_b");
+        var $a = $("<a href='#'></a>").append(
+            $("<img />").attr('src', thumbnailURL)
+                .attr("alt", item.title)
+                .attr("title", item.title)
+                .attr("data-image", bigURL)
+                .attr("data-description", item.title)
+        );
+        $("#output").append($a);
+    }
+    $("#output").show();
+    $("#output").unitegallery({
+        tiles_type: "nested"
+    });
+};
+var doSearch = function () {
+    var url = 'https://api.flickr.com/services/feeds/photos_public.gne';
+    $.getJSON({
+        url: url,
+        dataType: "jsonp",
+        data: {
+            id: "147822180@N02",
+            tagmode: "any",
+            jsoncallback: "processData",
+            format: "json"
+        }
+    });
+};
+$("#search").click(doSearch);
+//initialize:
+    doSearch();
+</script>
+<div id="output">
+</div>
