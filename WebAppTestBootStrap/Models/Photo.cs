@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace WebAppTestBootStrap.Models
 {
-    public class FlickrModel
+    public class Photo
     {
         public string id { get; set; }
         public string owner { get; set; }
