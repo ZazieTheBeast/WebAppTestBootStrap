@@ -1,0 +1,12 @@
+﻿@model Picture
+
+<div class="col-sm-4 col-lg-4 col-md-4">
+    <div class="thumbnail">
+        <img src="@Model.ImageThumbnailUrl" alt="">
+        <div class="caption">
+                <a asp-controller="Picture" asp-action="Details" asp-route-id="@Model.PictureId">@Model.Name</a>
+            </h3>
+            <p>@Model.ShortDescription</p>
+        </div>
+    </div>
+</div>

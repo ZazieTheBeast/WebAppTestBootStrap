@@ -1,0 +1,7 @@
+﻿@model WebAppTestBootStrap.ViewModels.PicturesListViewModel
+
+@ViewBag.CurrentCategory
+@foreach (var picture in Model.Pictures)
+{
+    @Html.Partial("PictureOverviewSummary", picture)
+}

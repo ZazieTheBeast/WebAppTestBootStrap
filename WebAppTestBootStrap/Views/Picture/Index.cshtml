@@ -1,0 +1,44 @@
+﻿@model PicturesListViewModel
+@ViewBag.CurrentCategory
+@section HeadScripts {
+    <script type='text/javascript' src='~/lib/unitegallery/js/unitegallery.min.js'></script>
+    <link rel='stylesheet' href='~/lib/unitegallery/css/unite-gallery.css' type='text/css' />
+    <link rel='stylesheet' href='~/lib/unitegallery/themes/default/ug-theme-default.css' type='text/css' />
+    <script src="~/lib/unitegallery/themes/tiles/ug-theme-tiles.js"></script>
+
+}
+
+<div id="gallery" style="display:none;">
+
+    <img alt="Preview Image 1"
+         src="~/images/thumbs/thumb1.jpg"
+         data-image="~/images/big/image1.jpg"
+         data-description="Preview Image 1 Description">
+
+    <img alt="Preview Image 2"
+         src="~/images/thumbs/thumb2.jpg"
+         data-image="~/images/big/image2.jpg"
+         data-description="Preview Image 2 Description">
+    <img alt="Youtube Video"
+         data-type="youtube"
+         data-videoid="A3PDXmYoF5U"
+         data-description="You can include youtube videos easily!">
+
+    @foreach (var picture in Model.Pictures)
+    {
+        @Html.Partial("PictureOverviewSummary", picture)
+    }
+
+</div>
+
+<script type="text/javascript">
+
+    jQuery(document).ready(function () {
+
+        jQuery("#gallery").unitegallery();
+
+    });
+
+</script>
+<div id="output">
+</div>
