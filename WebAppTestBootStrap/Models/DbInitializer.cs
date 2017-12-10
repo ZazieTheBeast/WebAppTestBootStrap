@@ -21,8 +21,8 @@ namespace WebAppTestBootStrap.Models
             {
                 context.AddRange
                 (
-                    new Picture { Name = "name here", ShortDescription = "short desc here", LongDescription = "long desc here", Category = Categories["Macro"], ImageUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/applepie.jpg", IsPictureOfTheWeek = true, ImageThumbnailUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/applepiesmall.jpg" },
-                    new Picture { Name = "name here2", ShortDescription = "short desc here", LongDescription = "long desc here", Category = Categories["Landscapes"], ImageUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/applepie.jpg", IsPictureOfTheWeek = true, ImageThumbnailUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/applepiesmall.jpg" }
+                    new Picture { Name = "name here", ShortDescription = "short desc here", LongDescription = "long desc here", Category = Categories["Macro"], ImageUrl = "./images/big/image1.jpg", IsPictureOfTheWeek = true, ImageThumbnailUrl = "./images/thumbs/thumb1.jpg" },
+                    new Picture { Name = "name here2", ShortDescription = "short desc here", LongDescription = "long desc here", Category = Categories["Landscapes"], ImageUrl = "./images/big/image2.jpg", IsPictureOfTheWeek = true, ImageThumbnailUrl = "./images/thumbs/thumb2.jpg" }
                 );
             }
 

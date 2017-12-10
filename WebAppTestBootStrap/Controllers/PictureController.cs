@@ -7,7 +7,6 @@ using WebAppTestBootStrap.Models;
 using WebAppTestBootStrap.ViewModels;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-
 namespace WebAppTestBootStrap.Controllers
 {
     public class PictureController : Controller
@@ -20,7 +19,7 @@ namespace WebAppTestBootStrap.Controllers
             _categoryRepository = categoryRepository;
         }
 
-        public ViewResult List(string category)
+        public ViewResult Index(string category)
         {
             IEnumerable<Picture> pictures;
             string currentCategory = string.Empty;
@@ -52,6 +51,5 @@ namespace WebAppTestBootStrap.Controllers
 
             return View(picture);
         }
-
     }
 }
