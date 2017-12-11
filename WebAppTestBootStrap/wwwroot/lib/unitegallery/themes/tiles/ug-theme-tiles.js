@@ -20,7 +20,7 @@ function UGTheme_tiles(){
 			theme_preloading_height: 200,		//the height of the preloading div, it show before the gallery
 			theme_preloader_vertpos: 100,		//the vertical position of the preloader
 			theme_gallery_padding: 0,			//the horizontal padding of the gallery from the sides
-			theme_appearance_order: "normal",	//normal, shuffle, keep - the appearance order of the tiles. applying only to columns type
+			theme_appearance_order: "shuffle",	//normal, shuffle, keep - the appearance order of the tiles. applying only to columns type
 			theme_auto_open:null				//auto open lightbox at start
 	};
 	
