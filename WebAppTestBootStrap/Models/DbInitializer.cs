@@ -21,8 +21,6 @@ namespace WebAppTestBootStrap.Models
             {
                 context.AddRange
                 (
-                    new Picture { Name = "name here", ShortDescription = "short desc here", LongDescription = "long desc here", Category = Categories["Macro"], ImageUrl = "./images/big/image1.jpg", IsPictureOfTheWeek = true, ImageThumbnailUrl = "./images/thumbs/thumb1.jpg" },
-                    new Picture { Name = "name here2", ShortDescription = "short desc here", LongDescription = "long desc here", Category = Categories["Landscapes"], ImageUrl = "./images/big/image2.jpg", IsPictureOfTheWeek = true, ImageThumbnailUrl = "./images/thumbs/thumb2.jpg" },
                     new Picture { Name = "Chruch @ blink cincinnati", ShortDescription = "Chruch @ blink cincinnati", LongDescription = "Chruch @ blink cincinnati", Category = Categories["Cityscapes"], ImageUrl = "./images/big/24101531268_8f5ed620b8_k.jpg", IsPictureOfTheWeek = true, ImageThumbnailUrl = "./images/thumbs/24101531268_db7ff00d0f_m.jpg" },
                     new Picture { Name = "Twilight in Newport", ShortDescription = "Twilight in Newport", LongDescription = "Twilight in Newport", Category = Categories["Landscapes"], ImageUrl = "./images/big/24787103228_0a866c1c28_k.jpg", IsPictureOfTheWeek = true, ImageThumbnailUrl = "./images/thumbs/24787103228_d0d0bb2da1_z.jpg" },
                     new Picture { Name = "Twilight Cincinnati Skyline", ShortDescription = "Twilight Cincinnati Skyline", LongDescription = "Twilight Cincinnati Skyline - Shot w/ Rokinon 16mm", Category = Categories["Cityscapes"], ImageUrl = "./images/big/33465620483_796756d995_k.jpg", IsPictureOfTheWeek = true, ImageThumbnailUrl = "./images/thumbs/33465620483_1ae44f86d9_z.jpg" },
