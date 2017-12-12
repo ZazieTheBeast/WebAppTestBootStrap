@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace WebAppTestBootStrap.Migrations
 {
-    public partial class pictures : Migration
+    public partial class one : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

@@ -11,8 +11,8 @@ using WebAppTestBootStrap.Models;
 namespace WebAppTestBootStrap.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20171211165030_pictures")]
-    partial class pictures
+    [Migration("20171212043010_one")]
+    partial class one
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

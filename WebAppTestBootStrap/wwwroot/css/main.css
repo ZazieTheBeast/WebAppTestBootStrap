@@ -96,24 +96,21 @@
             .nav-side-menu ul .sub-menu li:before,
             .nav-side-menu li .sub-menu li:before {
                 font-family: FontAwesome;
-                content: "\f105";
-                display: inline-block;
+                vertical-align: middle;
                 padding-left: 10px;
                 padding-right: 10px;
-                vertical-align: middle;
             }
 
     .nav-side-menu li {
-        padding-left: 0px;
         border-left: 3px solid #2e353d;
         border-bottom: 1px solid #23282e;
     }
-
         .nav-side-menu li a {
+            padding-left: 10px;
             text-decoration: none;
             color: #e1ffff;
+            display: block;
         }
-
             .nav-side-menu li a i {
                 padding-left: 10px;
                 width: 20px;
@@ -173,5 +170,4 @@ body {
     margin: 0px;
     padding: 0px;
 }
-
 

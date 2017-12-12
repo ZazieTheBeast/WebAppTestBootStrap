@@ -19,7 +19,7 @@ namespace WebAppTestBootStrap.Controllers
             _categoryRepository = categoryRepository;
         }
 
-        public ViewResult Index(string category)
+        public ViewResult List(string category)
         {
             IEnumerable<Picture> pictures;
             string currentCategory = string.Empty;
