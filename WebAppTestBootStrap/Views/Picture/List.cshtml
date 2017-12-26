@@ -2,26 +2,41 @@
     <link rel='stylesheet' href='~/lib/unitegallery/css/unite-gallery.css' type='text/css' />
     <link rel='stylesheet' href='~/lib/unitegallery/themes/default/ug-theme-default.css' type='text/css' />
     <script src="~/lib/unitegallery/themes/tiles/ug-theme-tiles.js"></script>}
-@model WebAppTestBootStrap.ViewModels.PicturesListViewModel
-<div id="gallery" style="display:none;">
 @ViewBag.CurrentCategory
-@foreach (var picture in Model.Pictures) {@Html.Partial("PictureOverviewSummary", picture)}
-</div>
-<script type="text/javascript">
-    jQuery(document).ready(function () {
-        jQuery("#gallery").unitegallery({
-            theme_appearance_order: "shuffle",
-            theme_enable_preloader: true,
-            gallery_theme: "tiles",
-            tiles_col_width: 450,
-            tiles_space_between_cols: 5,
-            tile_enable_textpanel: true,
-            lightbox_type: "compact",
-            lightbox_textpanel_enable_title: false,
-            lightbox_textpanel_enable_description: true,
-            lightbox_show_numbers: false
-        });
-    });
-</script>
-<div id="output">
-</div>
+@model WebAppTestBootStrap.ViewModels.PicturesListViewModel
+@{ 
+    int i = 0;
+    foreach (var picture in Model.Pictures)
+    {
+        if (picture.IsPictureOfTheWeek.ToString() == "True")
+        {
+        <div class="topBanner" style="background-image: linear-gradient(to left, rgba(255,255,255,0) 50%,rgba(46,53,61,1)), url(@picture.ImageUrl);">@picture.Category.CategoryName</div>
+            i++;
+        }
+    }
+    if (i == 1)
+    {
+        <div id="gallery" style="display:none;">
+            @foreach (var picture in Model.Pictures)
+            {
+                @Html.Partial("PictureOverviewSummary", picture)
+            }
+        </div>
+        <script type="text/javascript">
+            jQuery(document).ready(function () {
+                jQuery("#gallery").unitegallery({
+                    theme_appearance_order: "shuffle",
+                    theme_enable_preloader: true,
+                    gallery_theme: "tiles",
+                    tiles_col_width: 450,
+                    tiles_space_between_cols: 5,
+                    tile_enable_textpanel: true,
+                    lightbox_type: "compact",
+                    lightbox_textpanel_enable_title: false,
+                    lightbox_textpanel_enable_description: true,
+                    lightbox_show_numbers: false
+                });
+            });
+        </script>
+    }
+}

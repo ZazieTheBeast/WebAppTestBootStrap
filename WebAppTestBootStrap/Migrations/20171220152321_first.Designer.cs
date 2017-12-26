@@ -11,8 +11,8 @@ using WebAppTestBootStrap.Models;
 namespace WebAppTestBootStrap.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20171212043010_one")]
-    partial class one
+    [Migration("20171220152321_first")]
+    partial class first
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
