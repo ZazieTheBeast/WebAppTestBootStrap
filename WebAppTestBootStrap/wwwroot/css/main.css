@@ -1,7 +1,14 @@
-﻿#body-content {
+﻿@import url(https://fonts.googleapis.com/css?family=Open+Sans:400);
+@import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+
+#body-content {
     position: relative;
     z-index: 1;
+    color: #e1ffff;
 }
+    #body-content p {
+        padding: 10px;
+    }
 
 .nav-side-menu {
     overflow: auto;
@@ -127,13 +134,14 @@
         }
 
 @media (max-width: 767px) {
-
+    #gallery {
+        padding-top: 5px;
+    }
     .nav-side-menu {
         position: relative;
         width: 100%;
         margin-bottom: 10px;
     }
-
         .nav-side-menu .toggle-btn {
             display: block;
             cursor: pointer;
@@ -161,10 +169,48 @@
         height: 100px;
         background-repeat: no-repeat;
         background-position: center;
+        position: relative;
     }
+        .topBanner:hover {
+            box-shadow: 3px 3px 15px #666;
+            border-color: #C76C0C;
+            color: #fff;
+            cursor: pointer;
+            zoom: 1;
+            filter: alpha(opacity=45);
+            opacity: 0.45;
+            -webkit-transition: opacity .5s ease-in-out;
+            -moz-transition: opacity .5s ease-in-out;
+            -ms-transition: opacity .5s ease-in-out;
+            -o-transition: opacity .5s ease-in-out;
+            transition: opacity .5s ease-in-out;
+        }
+        .topBanner a {
+            display: block;
+        }
+
+        .topBanner figcaption {
+            right: 0;
+            bottom: 0;
+            padding-right: 10px;
+            padding-bottom: 10px;
+            position: absolute;
+            color: #e1ffff;
+            font-size: 2rem;
+            text-shadow: -2px 2px 0px rgba(0, 0, 0, 0.3), -3px 3px 1px rgba(0, 0, 0, 0.5), 4px 4px 2px rgba(0, 0, 0, 0.2);
+            font-family: 'Open Sans', sans-serif;
+            font-weight: bold;
+        }
+            .topBanner figcaption h3 {
+                margin: 0;
+                width: 50%;
+            }
 }
 
-@media (min-width: 767px) {    
+@media (min-width: 767px) {
+    #gallery{
+        padding-top: 5px;
+    }
     #body-content {
         padding-left: 300px;
     }
@@ -177,7 +223,42 @@
         height: 150px;
         background-repeat: no-repeat;
         background-position: left center;
+        position: relative;
     }
+        .topBanner:hover {
+            box-shadow: 3px 3px 15px #666;
+            border-color: #C76C0C;
+            color: #fff;
+            cursor: pointer;
+            zoom: 1;
+            filter: alpha(opacity=45);
+            opacity: 0.45;
+            -webkit-transition: opacity .5s ease-in-out;
+            -moz-transition: opacity .5s ease-in-out;
+            -ms-transition: opacity .5s ease-in-out;
+            -o-transition: opacity .5s ease-in-out;
+            transition: opacity .5s ease-in-out;
+        }
+        .topBanner figcaption {
+            right: 0;
+            bottom: 0;
+            padding-right: 10px;
+            padding-bottom: 10px;
+            position: absolute;
+            color: #e1ffff;
+            font-size: 3rem;
+            text-shadow: -2px 2px 0px rgba(0, 0, 0, 0.3), -3px 3px 1px rgba(0, 0, 0, 0.5), 4px 4px 2px rgba(0, 0, 0, 0.2);
+            font-family: 'Open Sans', sans-serif;
+            font-weight: bold;
+        }
+
+        .topBanner a {
+            display: block;
+        }
+            .topBanner figcaption h3 {
+                margin: 0;
+                width: 50%;
+            }
 }
 
 body {
@@ -185,4 +266,3 @@ body {
     padding: 0px;
     background-color: #2e353d;
 }
-

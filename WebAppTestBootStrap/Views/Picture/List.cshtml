@@ -4,13 +4,19 @@
     <script src="~/lib/unitegallery/themes/tiles/ug-theme-tiles.js"></script>}
 @ViewBag.CurrentCategory
 @model WebAppTestBootStrap.ViewModels.PicturesListViewModel
-@{ 
+@{
     int i = 0;
     foreach (var picture in Model.Pictures)
     {
         if (picture.IsPictureOfTheWeek.ToString() == "True")
         {
-        <div class="topBanner" style="background-image: linear-gradient(to left, rgba(255,255,255,0) 50%,rgba(46,53,61,1)), url(@picture.ImageUrl);">@picture.Category.CategoryName</div>
+            <a asp-controller="Picture" asp-action="List" asp-route-category="@picture.Category.CategoryName">
+                <figure class="topBanner" style="background-image: linear-gradient(to left, rgba(255,255,255,0) 50%,rgba(46,53,61,1)), url(@picture.ImageUrl);">
+                    <figcaption>
+                        @picture.Category.CategoryName
+                    </figcaption>
+                </figure>
+            </a>
             i++;
         }
     }

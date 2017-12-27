@@ -19,13 +19,13 @@ namespace WebAppTestBootStrap.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<PictureViewModel> LoadMorePictures()
+        public IEnumerable<PicturesListViewModel> LoadMorePictures()
         {
             IEnumerable<Picture> dbPictures = null;
 
             dbPictures = _pictureRepository.Pictures.OrderBy(p => p.PictureId).Take(10);
 
-            List<PictureViewModel> pictures = new List<PictureViewModel>();
+            List<PicturesListViewModel> pictures = new List<PicturesListViewModel>();
 
             foreach (var dbPicture in dbPictures)
             {
@@ -33,9 +33,9 @@ namespace WebAppTestBootStrap.Controllers
             }
             return pictures;
         }
-        private PictureViewModel MapDbPictureToPictureViewModel(Picture dbPicture)
+        private PicturesListViewModel MapDbPictureToPictureViewModel(Picture dbPicture)
         {
-            return new PictureViewModel()
+            return new PicturesListViewModel()
             {
                 PictureId = dbPicture.PictureId,
                 Name = dbPicture.Name,

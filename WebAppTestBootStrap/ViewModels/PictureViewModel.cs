@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace WebAppTestBootStrap.ViewModels
 {
-    public class PictureViewModel
+    public class PicturesListViewModel
     {
         public int PictureId { get; set; }
         public string Name { get; set; }

@@ -18,11 +18,11 @@
         <div class="menu-list">
             <ul id="menu-content" class="menu-content collapse out">
                 <li><a asp-area="" asp-controller="Home" asp-action="Index"><i class="fa fa-home"></i> Home</a></li>
+                <li><a asp-controller="Picture" asp-action="List" asp-route-Category="">All Pictures</a></li>
                 <li data-toggle="collapse" data-target="#products" class="collapsed">
                     <a href="#"><i class="fa fa-camera-retro fa-1x"></i> Gallery <span class="arrow"></span></a>
                 </li>
                 <ul class="sub-menu collapse" id="products">
-                    <li><a asp-controller="Picture" asp-action="List" asp-route-Category="">All Pictures</a></li>
                     @await Component.InvokeAsync("CategoryMenu")
                 </ul>
                 <li data-toggle="collapse" data-target="#service" class="collapsed">
