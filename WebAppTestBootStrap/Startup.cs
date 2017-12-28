@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Ninject;
+using Ninject.Web.Common;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -57,6 +59,5 @@ namespace WebAppTestBootStrap
             app.UseMvcWithDefaultRoute();
             DbInitializer.Seed(app);
         }
-
     }
 }
